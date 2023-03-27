@@ -1,0 +1,40 @@
+
+
+
+	{% extends './layout.html'%} 
+	{% block title %}
+	formulario
+	{% endblock%}
+	
+	{% block body%}
+	<div class="container-md">
+		<h1>Registro de Raspberry</h1>
+	<form method="post">
+		<div class="mb-3">
+			
+		  <label for="name" class="form-label">Nombre del equipo:</label>
+		  <input type="text" class="form-control" id="name" name="name" required aria-describedby="emailHelp">
+		  <div id="emailHelp" class="form-text">Nombre del equipo que deseas agregar.</div>
+		</div>
+		<div class="mb-3">
+		  <label for="series" class="form-label">Serie de la unidad:</label>
+		  <input type="text" id="series" name="series" required class="form-control">
+		</div>
+		<div class="mb-3">
+			<label for="status" class="form-label">Describir estado inicial:</label>
+			<select class="form-select" id="status" name="status" aria-label="Default select example">
+				<option selected>Selecciona una opcion</option>
+				<option value="Encendido">Encendido</option>
+				<option value="Apagado">Apagado</option>
+			  </select>
+		  </div>
+	
+		<button type="submit" class="btn btn-primary">Submit</button>
+	  </form>
+	  
+</div>
+
+	{% endblock %}
+	
+	
+	

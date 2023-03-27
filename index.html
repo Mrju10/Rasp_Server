@@ -1,0 +1,46 @@
+{% extends './layout.html'%} 
+{% block title %}
+ {{ data.titulo }} 
+{% endblock%}
+
+{% block body%}
+<div class="container-md">
+        <h4>{{ data.bienvenida }}</h4>
+
+		<table class="table">
+			<thead>
+			  <tr>
+				<th scope="col">ID</th>
+				<th scope="col">Name</th>
+				<th scope="col">Series</th>
+				<th scope="col">Status</th>
+				<th scope="col">Eliminar</th>
+			  </tr>
+			</thead>
+			<tbody>
+			  {% for row in data.datos %}
+			  <tr>
+				  <td scope="row">{{ row[0] }}</td>
+				  <td>{{ row[1] }}</td>
+				  <td>{{ row[2] }}</td>
+				  <td> {{ row[3] }}
+					<form action="{{ url_for('edit_data', id=row[0]) }}" method="POST">
+						<select class="form-select" id="status" name="status" aria-label="Default select example">
+							<option value="Encendido">Encender</option>
+							<option value="Apagado">Apagar</option>
+						  </select>
+						<button type="submit">Aplicar</button>
+					</form>	
+				  </td>
+				  <td> 
+					<form action="{{ url_for('delete_data', id=row[0]) }}" method="POST">
+						<button type="submit">Eliminar</button>
+					</form>					
+				  </td>
+			  </tr>
+			  {% endfor %}
+			</tbody>
+		  </table>
+		</div>
+    
+{% endblock %}

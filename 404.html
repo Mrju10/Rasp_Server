@@ -1,0 +1,32 @@
+{% extends './layout.html'%} 
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/error404.css') }}"> </link>
+{% endblock %}
+
+{% block title %}
+Pagina no encontrada
+{% endblock%}
+
+{% block body%}
+<div class="d-flex justify-content-center">
+<h1> Opssss..... La pagina que buscas no existe!!!</h1>
+<!-- <div class="reference"></div> -->
+<div class="plants">
+    <div class="plant">
+      <div class="leave"></div>
+      <div class="pot"></div>
+    </div>
+    
+    <div class="plant plant2">
+      <div class="leave leave2"></div>
+      <div class="pot pot2"></div> 
+    </div>
+    
+    <div class="plant plant3">
+     <div class="pot pot2 pot3">
+       <div class="stem"></div>
+      </div> 
+    </div>
+  </div>
+</div>
+{% endblock %}
